@@ -1,12 +1,12 @@
 import './App.css'
-import { Login } from './Components/Auth/Login/Login'
+import { Route } from './Routes/Route'
 
 function App() {
 
 
   return (
     <>
-      <Login/>
+      <Route/>
     </>
   )
 }
