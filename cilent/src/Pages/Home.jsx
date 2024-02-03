@@ -1,6 +1,54 @@
+import { Carousel } from "react-responsive-carousel";
 
 
 export const Home = () => {
+    const CarouselInfo = [
+        {
+            index: 1,
+            imageSrcSet:
+                "https://static.powtoon.co/cldn/site/lp/unbounce_hp/group-5.png",
+            imageAlt: "Roland Frei Training eLearning Expert and Instructor",
+            imageH6:
+                "“Powtoon enables us to share our best training explanations with our entire company. Until now, these lessons were exclusively provided during classroom lessons. But now, we make Powtoon videos available through our LMS. Students can watch the videos where, when, and as many times as they want.”",
+            imageB: "Roland Frei ",
+            imagePara: " | Training eLearning Expert & Instructor,",
+            imagePara2: " Skyguide",
+        },
+        {
+            index: 2,
+            imageSrcSet:
+                "https://static.powtoon.co/cldn/site/lp/unbounce_hp/group-7.png",
+            imageAlt: "Ami Sheffield",
+            imageH6:
+                "“Powtoon is intuitive and helps create energized, fun, and attention-grabbing videos. It brings us into the future of learning.”",
+            imageB: "Ami Sheffield ",
+            imagePara: " | Instructional Designer,",
+            imagePara2: " Conagra Brands",
+        },
+        {
+            index: 3,
+            imageSrcSet:
+                "https://static.powtoon.co/cldn/site/lp/unbounce_hp/group-8.png",
+            imageAlt: "Tony Wind Communication Specialist",
+            imageH6:
+                "“Powtoon has been a big help in breathing life into our otherwise bland company newsletters.”",
+            imageB: "Tony Wind ",
+            imagePara: " | Communication Specialist,",
+            imagePara2: " ProVision",
+        },
+        {
+            index: 4,
+            imageSrcSet:
+                "https://static.powtoon.co/cldn/site/lp/unbounce_hp/group-4.png",
+            imageAlt: "Ryan Deiss CEO Digital Marketer",
+            imageH6:
+                "“Our subscription to Powtoon has paid for itself 100 times over.”",
+            imageB: "Ryan Deiss ",
+            imagePara: " | CEO,",
+            imagePara2: " Digital Marketer",
+        },
+    ];
+
     const sub = {
         fontSize: '19px',
         color: 'rgb(73, 11, 230)',
@@ -8,10 +56,12 @@ export const Home = () => {
         lineHeight: '1.45',
         fontWeight: 200,
     };
+
+
     return (
         <div>
 
-
+            {/* box-1 */}
 
 
             {/* box-2 */}
@@ -60,23 +110,60 @@ export const Home = () => {
 
 
             {/* box-5 */}
-            <div className="usedby bg-[#4e18dd] flex justify-center items-center text-white py-10 text-center">
-                <div className="container items-center">
-                    <h2 className="text-4xl font-bold mb-4">
+            <div style={{ fontFamily: "Poppins" }} className="usedby bg-[#4e18dd] flex justify-center items-center text-white py-20 text-center">
+                <div className="container grid justify-center items-center" >
+                    <h2 className="text-3xl font-semibold mb-12">
                         Powtoon is used by 96% of Fortune 500 Companies
                     </h2>
                     <img
                         alt="usedby"
-                        className="switchimage items-center"
+                        className="switchimage items-center mb-2"
                         src="https://static.powtoon.co/cldn/site/home%20page/usedby.png"
                     />
-                    <a
-                        className="mt-4 bg-white text-[#4e18dd] font-bold py-2 px-4 rounded-full"
-                        href="/enterprise/"
-                    >
-                        LEARN MORE
-                    </a>
+                    <div>
+
+                        <a
+                            className="mt-4 bg-white text-[#4643f0] font-semibold  py-4 px-20 rounded-full hover:bg-blue-500 hover:text-white"
+                            href="/enterprise"
+                        >
+                            LEARN MORE
+                        </a>
+                    </div>
                 </div>
+            </div>
+
+            {/* box-6 */}
+
+            <div style={{ fontFamily: "Poppins" }} className=" flex justify-center items-center text-white py-20 text-center">
+                <div>
+                    <h2>Over 40 Million Happy Customers</h2>
+                    <h6>Here’s what they have to say...</h6>
+                </div>
+            </div>
+            {/* box-7 */}
+
+            <div style={{ fontFamily: "Poppins" }} className=" bg-[#4e18dd] grid justify-center items-center text-white py-20 text-center">
+                <div>
+                    <h2 className="text-4xl mx-3">Over 40 Million Happy Customers</h2>
+                    <h6 className="text-xl">Here’s what they have to say...</h6>
+                </div>
+                <div style={{ fontFamily: "Poppins" }} className=" bg-[#4e18dd] text-white py-20">
+
+                    <Carousel autoPlay>
+                        {CarouselInfo.forEach((item) => (
+                            <div key={item.index}>
+                                <img alt={item.imageAlt} src={item.imageUrl} />
+                                <div>
+                                    <h6 className="w-1/2">{item.imageH6}</h6>
+                                    <p className=""><b>{item.imageB}</b> {item.imagePara}{item.imagePara2}</p>
+                                </div>
+                            </div>
+                        ))}
+                        
+                    </Carousel>
+
+                </div>
+
             </div>
         </div>
     )

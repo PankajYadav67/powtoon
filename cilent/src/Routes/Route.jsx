@@ -4,12 +4,12 @@ import { Home } from "../Pages/Home"
 
 
 
-export const Route = () => {
+export const AppRoutes = () => {
     return(
         <div>
             <Navbar/>
             <Routes>
-                <Route />
+               
 
 
             </Routes>

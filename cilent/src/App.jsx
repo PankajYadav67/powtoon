@@ -1,12 +1,12 @@
 import './App.css'
-import { Route } from './Routes/Route'
+import { AppRoutes } from './Routes/Route'
 
 function App() {
 
 
   return (
     <>
-      <Route/>
+      <AppRoutes />
     </>
   )
 }
