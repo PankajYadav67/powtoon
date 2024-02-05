@@ -1,53 +1,15 @@
-import { Carousel } from "react-responsive-carousel";
-
+// import Swiper bundle with all modules installed
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css/bundle';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/mousewheel';
+import 'swiper/css/keyboard';
+import { Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
+import { useEffect } from 'react';
+import { CarouselInfo } from '../Constants/CarouselInfo';
 
 export const Home = () => {
-    const CarouselInfo = [
-        {
-            index: 1,
-            imageSrcSet:
-                "https://static.powtoon.co/cldn/site/lp/unbounce_hp/group-5.png",
-            imageAlt: "Roland Frei Training eLearning Expert and Instructor",
-            imageH6:
-                "“Powtoon enables us to share our best training explanations with our entire company. Until now, these lessons were exclusively provided during classroom lessons. But now, we make Powtoon videos available through our LMS. Students can watch the videos where, when, and as many times as they want.”",
-            imageB: "Roland Frei ",
-            imagePara: " | Training eLearning Expert & Instructor,",
-            imagePara2: " Skyguide",
-        },
-        {
-            index: 2,
-            imageSrcSet:
-                "https://static.powtoon.co/cldn/site/lp/unbounce_hp/group-7.png",
-            imageAlt: "Ami Sheffield",
-            imageH6:
-                "“Powtoon is intuitive and helps create energized, fun, and attention-grabbing videos. It brings us into the future of learning.”",
-            imageB: "Ami Sheffield ",
-            imagePara: " | Instructional Designer,",
-            imagePara2: " Conagra Brands",
-        },
-        {
-            index: 3,
-            imageSrcSet:
-                "https://static.powtoon.co/cldn/site/lp/unbounce_hp/group-8.png",
-            imageAlt: "Tony Wind Communication Specialist",
-            imageH6:
-                "“Powtoon has been a big help in breathing life into our otherwise bland company newsletters.”",
-            imageB: "Tony Wind ",
-            imagePara: " | Communication Specialist,",
-            imagePara2: " ProVision",
-        },
-        {
-            index: 4,
-            imageSrcSet:
-                "https://static.powtoon.co/cldn/site/lp/unbounce_hp/group-4.png",
-            imageAlt: "Ryan Deiss CEO Digital Marketer",
-            imageH6:
-                "“Our subscription to Powtoon has paid for itself 100 times over.”",
-            imageB: "Ryan Deiss ",
-            imagePara: " | CEO,",
-            imagePara2: " Digital Marketer",
-        },
-    ];
 
     const sub = {
         fontSize: '19px',
@@ -57,9 +19,22 @@ export const Home = () => {
         fontWeight: 200,
     };
 
+    useEffect(() => {
+        const tabItems = document.querySelectorAll('.tab-item');
+
+        tabItems.forEach((tabItem) => {
+            tabItem.addEventListener('click', () => {
+                tabItems.forEach((item) => {
+                    item.classList.remove('active');
+                });
+
+                tabItem.classList.add('active');
+            });
+        });
+    }, []);
 
     return (
-        <div>
+        <div >
 
             {/* box-1 */}
 
@@ -134,35 +109,121 @@ export const Home = () => {
 
             {/* box-6 */}
 
-            <div style={{ fontFamily: "Poppins" }} className=" flex justify-center items-center text-white py-20 text-center">
-                <div>
-                    <h2>Over 40 Million Happy Customers</h2>
-                    <h6>Here’s what they have to say...</h6>
+            <div style={{ fontFamily: "Poppins" }} className=" grid mx-12 justify-center items-center text-white py-20 text-center">
+
+                <h2 className="text-[#331877] text-4xl font-bold mb-8">Why Visual Communications? Why Powtoon?</h2>
+                <div className="visual-tabs grid justify-center align-center">
+                    <ul className="flex justify-between w-full gap-2 mx-auto text-center border-b border-gray-400 pb-1">
+                        <li data-tab="1" className="tab-item border border-gray-300 rounded-md mb-2 p-4 shadow-md cursor-pointer">
+                            <img src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/yes-you-can.png" alt="you can create" />
+                            <p className="mt-2">Yes, you can create your own videos!</p>
+                        </li>
+                        <li data-tab="2" className="tab-item border border-gray-300 rounded-md mb-2 p-4 shadow-md cursor-pointer">
+                            <img src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/work-smart.png" alt="work smart" />
+                            <p className="mt-2">Work smarter, not harder</p>
+                        </li>
+                        <li data-tab="3" className="tab-item border border-gray-300 rounded-md mb-2 p-4 shadow-md cursor-pointer">
+                            <img src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/benefits-thumbnails-4.png" alt="noise" />
+                            <p className="mt-2">Miscommunication is costing you</p>
+                        </li>
+                        <li data-tab="4" className="tab-item border border-gray-300 rounded-md mb-2 p-4 shadow-md cursor-pointer">
+                            <img src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/get-more.png" alt="get more" />
+                            <p className="mt-2">Get more from your existing platforms</p>
+                        </li>
+                        <li data-tab="5" className="tab-item border border-gray-300 rounded-md mb-2 p-4 shadow-md cursor-pointer">
+                            <img src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/benefits-thumbnails.png" alt="benefits" />
+                            <p className="mt-2">Bring visual experiences to your entire business</p>
+                        </li>
+                    </ul>
+
+                    {/* second unorderList */}
+                    <ul className="tabs-content">
+                        <li data-tab-content="1" className="active flex justify-center items-center">
+                            <span className="mob-close">X</span>
+                            <p className='text-black w-2/4 text-2xl font-light text-left'>No matter your skill level or the task at hand, creating visual communications with Powtoon amplifies your results. Tell compelling stories through hundreds of animated characters, templates, video backgrounds, soundtracks, and more. With Powtoon, making your own videos requires no design or tech skills to start making a deeper impact at work.</p>
+                            <div >
+                                <img src="https://uploads-ssl.webflow.com/604eb6ba0b6beb14f8ba505c/63f633bc4c0c1b3b7caabb6f_Create%20your%20own%20videos%20.webp" alt="creating visual communications" className='w-full' />
+                            </div>
+                        </li>
+                        <li data-tab-content="2" className="active flex justify-center items-center">
+                            <span className="mob-close">X</span>
+                            <p className='text-black w-2/4 text-2xl font-light text-left'>Powtoon’s professionally-designed templates help you create more video &amp; visual content faster. Build off of the successes of over 40 million users worldwide in every kind of business, and benefit from tons of helpful tips, tricks, training sessions, and guides created to shorten the learning curve and help you get measurable results.</p>
+                            <div>
+                                <img src="https://uploads-ssl.webflow.com/604eb6ba0b6beb14f8ba505c/63f633bc5af1251b1c05a782_Work%20smarter%2C%20not%20harder%20copy.webp" alt="designed templates" className='w-full' />
+                            </div>
+                        </li>
+                        <li data-tab-content="3" className="active flex justify-center items-center">
+                            <span className="mob-close">X</span>
+                            <p className='text-black w-2/4 text-2xl font-light text-left'>On average, SMBs lose $420,000 a year to miscommunication between employees. And in large enterprises, that figure grows to a whopping $62.4 million per year. Empower your company to bring down those unseen costs and replace them with higher revenue and a company that actually communicates effectively.</p>
+                            <div>
+                                <img src="https://uploads-ssl.webflow.com/604eb6ba0b6beb14f8ba505c/63f633bc73ee6b50148a87ab_Miscommunication%20is%20costing%20you%20copy.webp" alt="communicate effectively" className='w-full' />
+                            </div>
+                        </li>
+                        <li data-tab-content="4" className="active flex justify-center items-center">
+                            <span className="mob-close">X</span>
+                            <p className='text-black w-2/4 text-2xl font-light text-left'>Building a company intranet, using an LMS or LXP, populating your blog or website, and spreading delightful animated videos and visual messages to your audience via email or social media has never been easier. Get the most out of these platforms by sharing visual experiences that boost your results.</p>
+                            <div>
+                                <img src="https://uploads-ssl.webflow.com/604eb6ba0b6beb14f8ba505c/63f633bcae677508263818d7_Get%20more%20from%20your%20existing%20platformscopy.webp" alt="spreading animated videos" className='w-full' />
+                            </div>
+                        </li>
+                        <li data-tab-content="5" className="active flex justify-center items-center">
+                            <span className="mob-close">X</span>
+                            <p className='text-black w-2/4 text-2xl font-light text-left'>For enterprise-grade data security, compliance, team and license management, collaboration, and additional capabilities that were developed especially for large organizations, Powtoon Business empowers you to transform everyday communications into powerful visual experiences, company-wide. See every department grow in reach and impact with our highest level of service and security.</p>
+                            <div>
+                                <img src="https://uploads-ssl.webflow.com/604eb6ba0b6beb14f8ba505c/63f633bd56b5941de19ccdec_Bring%20visual%20experiences%20to%20your%20entire%20business%20copy%20%20copy.webp" alt="enterprise solutions" className='w-full' />
+                            </div>
+                        </li>
+
+                    </ul>
+
+
+                    <div>
+
+                        <a href="/account/" className="btn form-btn trackmt-4 bg-[#4643f0] text-white font-semibold  py-4 px-20 rounded-full hover:bg-blue-500 hover:text-white" data-action="click" data-category="CTA" data-label="start_now" data-value="20026">
+                            START NOW
+                        </a>
+                    </div>
                 </div>
+
+
+
+
+
             </div>
             {/* box-7 */}
 
             <div style={{ fontFamily: "Poppins" }} className=" bg-[#4e18dd] grid justify-center items-center text-white py-20 text-center">
                 <div>
                     <h2 className="text-4xl mx-3">Over 40 Million Happy Customers</h2>
-                    <h6 className="text-xl">Here’s what they have to say...</h6>
+                    <h6 className="text-xl mb-10">Here’s what they have to say...</h6>
                 </div>
-                <div style={{ fontFamily: "Poppins" }} className=" bg-[#4e18dd] text-white py-20">
 
-                    <Carousel autoPlay>
-                        {CarouselInfo.forEach((item) => (
-                            <div key={item.index}>
-                                <img alt={item.imageAlt} src={item.imageUrl} />
-                                <div>
-                                    <h6 className="w-1/2">{item.imageH6}</h6>
-                                    <p className=""><b>{item.imageB}</b> {item.imagePara}{item.imagePara2}</p>
-                                </div>
+                <Swiper
+                    style={{ width: '1000px', alignItems: "center", marginRight: '30px' }}
+                    cssMode={true}
+
+                    mousewheel={true}
+                    keyboard={true}
+                    modules={[Autoplay, Pagination, Mousewheel, Keyboard]}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    }}
+                    className="mySwiper"
+                >
+                    {CarouselInfo.map((item) => (
+                        <SwiperSlide key={item.index} style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "20px" }} className="mx-12">
+                            <img alt={item.imageAlt} src={item.imageSrcSet} />
+
+                            <div>
+                                <h6 className="w-full text-3xl mb-4">{item.imageH6}</h6>
+
+                                <p className="  text-xl"><b>{item.imageB}</b> {item.imagePara} {item.imagePara2}</p>
                             </div>
-                        ))}
-                        
-                    </Carousel>
 
-                </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
 
             </div>
         </div>
