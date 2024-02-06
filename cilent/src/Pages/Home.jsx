@@ -6,10 +6,18 @@ import 'swiper/css/pagination';
 import 'swiper/css/mousewheel';
 import 'swiper/css/keyboard';
 import { Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { CarouselInfo } from '../Constants/CarouselInfo';
 
 export const Home = () => {
+    const [selectedTab, setSelectedTab] = useState(1);
+
+    const handleTabClick = (tabNumber) => {
+        setSelectedTab(tabNumber);
+    };
+
+
+    //css
 
     const sub = {
         fontSize: '19px',
@@ -19,19 +27,20 @@ export const Home = () => {
         fontWeight: 200,
     };
 
-    useEffect(() => {
-        const tabItems = document.querySelectorAll('.tab-item');
-
-        tabItems.forEach((tabItem) => {
-            tabItem.addEventListener('click', () => {
-                tabItems.forEach((item) => {
-                    item.classList.remove('active');
-                });
-
-                tabItem.classList.add('active');
-            });
-        });
-    }, []);
+    const tabStyles = {
+        // Styles for non-active tabs
+        categoryTab: {
+           
+        },
+        // Styles for active tab
+        activeCategoryTab: {
+            border: '1px solid #ccc',
+            borderRadius: '1rem', 
+            boxShadow: '0px 0px 10px 0px #ccc',
+            color: "#4d0ce4",
+            
+        },
+    };
 
     return (
         <div >
@@ -109,71 +118,96 @@ export const Home = () => {
 
             {/* box-6 */}
 
-            <div style={{ fontFamily: "Poppins" }} className=" grid mx-12 justify-center items-center text-white py-20 text-center">
+            <div style={{ fontFamily: "Poppins" }} className=" grid mx-20 justify-center items-center text-white py-20 text-center">
 
                 <h2 className="text-[#331877] text-4xl font-bold mb-8">Why Visual Communications? Why Powtoon?</h2>
                 <div className="visual-tabs grid justify-center align-center">
-                    <ul className="flex justify-between w-full gap-2 mx-auto text-center border-b border-gray-400 pb-1">
-                        <li data-tab="1" className="tab-item border border-gray-300 rounded-md mb-2 p-4 shadow-md cursor-pointer">
-                            <img src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/yes-you-can.png" alt="you can create" />
-                            <p className="mt-2">Yes, you can create your own videos!</p>
+                    <ul className="categories-tabs flex justify-center items-center px-5  mb-10 visual-tabs w-full">
+                        <li
+                            className="category-tab w-1/5 "
+                            style={selectedTab === 1 ? tabStyles.activeCategoryTab : tabStyles.categoryTab}
+                            data-tab="1"
+                            onClick={() => handleTabClick(1)}
+                        >
+                            <img  alt="you can create" src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/yes-you-can.png" />
+                            <p className='text-black px-8'>Yes, you can create your own videos!</p>
                         </li>
-                        <li data-tab="2" className="tab-item border border-gray-300 rounded-md mb-2 p-4 shadow-md cursor-pointer">
-                            <img src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/work-smart.png" alt="work smart" />
-                            <p className="mt-2">Work smarter, not harder</p>
+                        <li
+                            className="category-tab w-1/5"
+                            style={selectedTab === 2 ? tabStyles.activeCategoryTab : tabStyles.categoryTab}
+                            data-tab="2"
+                            onClick={() => handleTabClick(2)}
+                        >
+                            <img alt="work smart" src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/work-smart.png" />
+                            <p className='text-black px-8'>Work smarter, not harder</p>
                         </li>
-                        <li data-tab="3" className="tab-item border border-gray-300 rounded-md mb-2 p-4 shadow-md cursor-pointer">
-                            <img src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/benefits-thumbnails-4.png" alt="noise" />
-                            <p className="mt-2">Miscommunication is costing you</p>
+                        <li
+                            className="category-tab w-1/5"
+                            style={selectedTab === 3 ? tabStyles.activeCategoryTab : tabStyles.categoryTab}
+                            data-tab="3"
+                            onClick={() => handleTabClick(3)}
+                        >
+                            <img alt="noise" src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/benefits-thumbnails-4.png" />
+                            <p className='text-black  px-8'>Miscommunication is costing you</p>
                         </li>
-                        <li data-tab="4" className="tab-item border border-gray-300 rounded-md mb-2 p-4 shadow-md cursor-pointer">
-                            <img src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/get-more.png" alt="get more" />
-                            <p className="mt-2">Get more from your existing platforms</p>
+                        <li
+                            className="category-tab w-1/5"
+                            style={selectedTab === 4 ? tabStyles.activeCategoryTab : tabStyles.categoryTab}
+                            data-tab="4"
+                            onClick={() => handleTabClick(4)}
+                        >
+                            <img alt="get more" src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/get-more.png" />
+                            <p className='text-black  px-8'>Get more from your existing platforms</p>
                         </li>
-                        <li data-tab="5" className="tab-item border border-gray-300 rounded-md mb-2 p-4 shadow-md cursor-pointer">
-                            <img src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/benefits-thumbnails.png" alt="benefits" />
-                            <p className="mt-2">Bring visual experiences to your entire business</p>
+                        <li className="category-tab w-1/5"
+                            style={selectedTab === 5 ? tabStyles.activeCategoryTab : tabStyles.categoryTab}
+                            data-tab="5"
+                            onClick={() => handleTabClick(5)}
+                        >
+                            <img alt="benefits" src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/benefits-thumbnails.png" />
+                            <p className='text-black   px-8'>Bring visual experiences to your entire business</p>
                         </li>
                     </ul>
 
+                    <hr />
+
                     {/* second unorderList */}
-                    <ul className="tabs-content">
-                        <li data-tab-content="1" className="active flex justify-center items-center">
+                    <ul className="tabs-content my-5 px-10">
+                        <li data-tab-content="1" className={selectedTab === 1 ? 'active flex justify-center items-center px-8' : 'hidden'}>
                             <span className="mob-close">X</span>
                             <p className='text-black w-2/4 text-2xl font-light text-left'>No matter your skill level or the task at hand, creating visual communications with Powtoon amplifies your results. Tell compelling stories through hundreds of animated characters, templates, video backgrounds, soundtracks, and more. With Powtoon, making your own videos requires no design or tech skills to start making a deeper impact at work.</p>
-                            <div >
+                            <div>
                                 <img src="https://uploads-ssl.webflow.com/604eb6ba0b6beb14f8ba505c/63f633bc4c0c1b3b7caabb6f_Create%20your%20own%20videos%20.webp" alt="creating visual communications" className='w-full' />
                             </div>
                         </li>
-                        <li data-tab-content="2" className="active flex justify-center items-center">
+                        <li data-tab-content="2" className={selectedTab === 2 ? 'active flex justify-center items-center px-8' : 'hidden'}>
                             <span className="mob-close">X</span>
-                            <p className='text-black w-2/4 text-2xl font-light text-left'>Powtoon’s professionally-designed templates help you create more video &amp; visual content faster. Build off of the successes of over 40 million users worldwide in every kind of business, and benefit from tons of helpful tips, tricks, training sessions, and guides created to shorten the learning curve and help you get measurable results.</p>
+                            <p className='text-black w-2/4 text-2xl font-light  text-left'>Powtoon’s professionally-designed templates help you create more video & visual content faster. Build off of the successes of over 40 million users worldwide in every kind of business, and benefit from tons of helpful tips, tricks, training sessions, and guides created to shorten the learning curve and help you get measurable results.</p>
                             <div>
                                 <img src="https://uploads-ssl.webflow.com/604eb6ba0b6beb14f8ba505c/63f633bc5af1251b1c05a782_Work%20smarter%2C%20not%20harder%20copy.webp" alt="designed templates" className='w-full' />
                             </div>
                         </li>
-                        <li data-tab-content="3" className="active flex justify-center items-center">
+                        <li data-tab-content="3" className={selectedTab === 3 ? 'active flex justify-center items-center px-8' : 'hidden'}>
                             <span className="mob-close">X</span>
                             <p className='text-black w-2/4 text-2xl font-light text-left'>On average, SMBs lose $420,000 a year to miscommunication between employees. And in large enterprises, that figure grows to a whopping $62.4 million per year. Empower your company to bring down those unseen costs and replace them with higher revenue and a company that actually communicates effectively.</p>
                             <div>
                                 <img src="https://uploads-ssl.webflow.com/604eb6ba0b6beb14f8ba505c/63f633bc73ee6b50148a87ab_Miscommunication%20is%20costing%20you%20copy.webp" alt="communicate effectively" className='w-full' />
                             </div>
                         </li>
-                        <li data-tab-content="4" className="active flex justify-center items-center">
+                        <li data-tab-content="4" className={selectedTab === 4 ? 'active flex justify-center items-center px-8' : 'hidden'}>
                             <span className="mob-close">X</span>
                             <p className='text-black w-2/4 text-2xl font-light text-left'>Building a company intranet, using an LMS or LXP, populating your blog or website, and spreading delightful animated videos and visual messages to your audience via email or social media has never been easier. Get the most out of these platforms by sharing visual experiences that boost your results.</p>
                             <div>
                                 <img src="https://uploads-ssl.webflow.com/604eb6ba0b6beb14f8ba505c/63f633bcae677508263818d7_Get%20more%20from%20your%20existing%20platformscopy.webp" alt="spreading animated videos" className='w-full' />
                             </div>
                         </li>
-                        <li data-tab-content="5" className="active flex justify-center items-center">
+                        <li data-tab-content="5" className={selectedTab === 5 ? 'active flex justify-center items-center px-8' : 'hidden'}>
                             <span className="mob-close">X</span>
                             <p className='text-black w-2/4 text-2xl font-light text-left'>For enterprise-grade data security, compliance, team and license management, collaboration, and additional capabilities that were developed especially for large organizations, Powtoon Business empowers you to transform everyday communications into powerful visual experiences, company-wide. See every department grow in reach and impact with our highest level of service and security.</p>
                             <div>
                                 <img src="https://uploads-ssl.webflow.com/604eb6ba0b6beb14f8ba505c/63f633bd56b5941de19ccdec_Bring%20visual%20experiences%20to%20your%20entire%20business%20copy%20%20copy.webp" alt="enterprise solutions" className='w-full' />
                             </div>
                         </li>
-
                     </ul>
 
 
