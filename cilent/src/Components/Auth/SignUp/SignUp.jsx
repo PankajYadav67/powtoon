@@ -18,16 +18,14 @@ import {
 import { OAuthButtonGroup } from './OAuthButtonGroup';
 import { PasswordField } from './PasswordField';
 import { useState } from 'react';
-import axios from 'axios';
 import { URL } from '../../../Constants/EndPoints';
-import { useAuth } from '../../../Contexts/Auth.Context';
+import axios from "axios";
 
-export const Login = () => {
+export const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const url = URL;
-    const toast = useToast();
-    const { login } = useAuth();
+    const toast = useToast()
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -37,33 +35,27 @@ export const Login = () => {
         setPassword(event.target.value);
     };
 
-    const handleLogIn = async () => {
+    const handleSignUp = async () => {
         try {
-            const response = await axios.post(`${url}/auth/login`, {
+            const response = await axios.post(`${url}/auth/signup`, {
                 email,
                 password,
             });
-            // Successful login
             toast({
-                title: `Successfully Logged In`,
-                description: `Welcome back! You have successfully logged in.`,
+                title: `Account created.`,
+                description: "We've created your account for you.",
                 status: 'success',
-                duration: 3000,
+                duration: 5000,
                 position: "top",
                 isClosable: true,
-            });
-            // Update AuthContext with login data
-            login({
-                username: response.data._id, 
-                email: response.data.email,
-                token: response.data.token  
-            });
+            })
             // Handle the response, e.g., show a success message or redirect the user
             console.log(response.data);
         } catch (error) {
+            // Handle errors, e.g., show an error message to the user
             toast({
-                title: `Login Failed`,
-                description: `Oops! There was an error during login. Please check your credentials and try again.`,
+                title: `There Is Some Error.`,
+                description: "We've not created your account for you.",
                 status: 'error',
                 duration: 3000,
                 position: "top",
@@ -75,7 +67,7 @@ export const Login = () => {
 
     return (
         <div className='bg-[#3A57FA] min-h-screen flex flex-col'>
-            <div className=' p-4 w-[500px] mx-10 h-auto'>
+            <div className='mx-10 p-4 w-[500px] h-auto'>
                 <Link href="/" className="default-logo login-logo" aria-label="Powtoon logo">
                     <Image src="https://static.powtoon.co/images/account/authentication/SignupPage_Logo.svg?24.1.2.1" alt="powtoon | The Visual Communication Platform" />
                 </Link>
@@ -83,6 +75,7 @@ export const Login = () => {
             </div>
 
             <Container
+                maxWidth={"fit-content"}
                 className='mx-10'
                 py={{
                     base: '3',
@@ -96,9 +89,7 @@ export const Login = () => {
                 justifyContent="space-between"
                 alignItems="center"
                 flex="1"
-                maxWidth={"fit-content"}
             >
-
                 <Box
                     py={{
                         base: '0',
@@ -121,7 +112,7 @@ export const Login = () => {
                         sm: 'xl',
                     }}
                     backgroundColor="white"
-                    width="35%"
+                    width="40%"
                 >
                     <Stack spacing="6">
                         <Stack
@@ -130,6 +121,7 @@ export const Login = () => {
                                 md: '3',
                             }}
                             textAlign="center"
+
                         >
                             <Heading
                                 size={{
@@ -138,10 +130,10 @@ export const Login = () => {
                                 }}
                                 color="#3A57FA"
                             >
-                                Log in to Powtoon
+                                Let's Create Your Account
                             </Heading>
                             <Text color="fg.muted">
-                                New to powtoon? <Link href="/auth/signup" color="#3A57FA">Create an account</Link>
+                                Already have an account <Link href="/auth/login" color="#3A57FA">Login</Link>
                             </Text>
                         </Stack>
                         <Stack spacing="5">
@@ -158,8 +150,8 @@ export const Login = () => {
                             </Button>
                         </HStack>
                         <Stack spacing="6">
-                            <Button color="white" onClick={handleLogIn} background="#3A57FA" _hover={{ color: 'white', backgroundColor: '#0000ff' }}>
-                                Log in
+                            <Button color="white" onClick={handleSignUp} background="#3A57FA" _hover={{ color: 'white', backgroundColor: '#0000ff' }}>
+                                Sign Up
                             </Button>
                             <HStack>
                                 <Divider />
@@ -170,16 +162,15 @@ export const Login = () => {
                             </HStack>
                             <OAuthButtonGroup />
                             <Text display={'flex'} alignItems={"center"} justifyContent={"center"}>
-                                Log in to your <Link href="#" color="#3A57FA">Enterprise account</Link>
+                                Sign Up to your <Link href="#" color="#3A57FA">Enterprise account</Link>
                             </Text>
                         </Stack>
                     </Stack>
                 </Box>
-                <Box width="50%"  >
+                <Box width="50%">
                     <Image src='/images/loginLoco.png' alt='Login Logo' height="auto" />
                 </Box>
-
             </Container>
         </div>
     );
-};
+}

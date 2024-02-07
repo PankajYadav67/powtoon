@@ -65,7 +65,14 @@ authRouter.post("/login", validateFields, async (req, res) => {
 
     if (user && user.password === password) {
       // User found and password matches
-      res.send({ message: "Login successful" });
+      let { email, _id } = user;
+
+      let payload = {
+        email,
+        _id,
+        token: 54321,
+      };
+      res.send({ message: "Login successful", payload });
     } else {
       res.status(401).send({ message: "Wrong credentials" });
     }

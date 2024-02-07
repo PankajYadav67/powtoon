@@ -10,13 +10,19 @@ export const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
-        <div id="navbarRoot" className="bg-[#4e18dd] h-20 flex justify-between items-center">
+        <div id="navbarRoot" className="bg-[#4e18dd]  h-20 flex justify-between items-center">
             <header id="header" className="flex justify-between w-full items-center mx-12">
 
                 {/* Left side of the Navbar */}
                 <div className="w-[#780px] flex justify-center items-center font-semibold text-white">
                     <a href="/">
-                        <img src="https://library.powtoon.co/library/asset/15382/VCP_logo-02_pORGJlB.svg" alt="Powtoon logo" width={"200px"} height={"45px"} />
+                        <img
+                            src="https://library.powtoon.co/library/asset/15382/VCP_logo-02_pORGJlB.svg"
+                            alt="Powtoon logo"
+                            width={"200px"}
+                            height={"45px"}
+                            style={{ fill: "white" }}
+                        />
                     </a>
 
                     <nav role="navigation" className="mx-2 flex justify-center items-center space-x-1">
