@@ -35,7 +35,8 @@ export const SignUp = () => {
         setPassword(event.target.value);
     };
 
-    const handleSignUp = async () => {
+    const handleSignUp = async (e) => {
+        e.preventDefault();
         try {
             const response = await axios.post(`${url}/auth/signup`, {
                 email,

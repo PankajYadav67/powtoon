@@ -3,6 +3,7 @@ import { Navbar } from "../Components/Navbar/Navbar"
 import { Home } from "../Pages/Home"
 import { Login } from "../Components/Auth/Login/Login";
 import { SignUp } from "../Components/Auth/SignUp/SignUp";
+import { Education } from "../Pages/Education";
 
 
 
@@ -21,6 +22,7 @@ export const AppRoutes = () => {
             <Routes>
                 <Route path="/" element={<Home />}/>
                 <Route path="/auth/login" element={<Login />}/>
+                <Route path="/edu-home/" element={<Education />}/>
                 <Route path="/auth/signup" element={<SignUp />}/>
             </Routes>
           

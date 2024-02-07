@@ -62,7 +62,7 @@ export const Navbar = () => {
                         </Menu>
 
                         {/* EDU and Enterprise Links */}
-                        <div><a href="">EDU</a></div>
+                        <div><a href="/edu-home/">EDU</a></div>
                         <div><a href="">Enterprise</a></div>
                     </nav>
                 </div>

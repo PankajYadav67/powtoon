@@ -68,7 +68,7 @@ export const Home = () => {
                             height="375"
                             src="https://www.youtube.com/embed/p8n-bUdAWgM"
                             frameborder="0"
-                            allowfullscreen
+                            allowFullScreen
                         ></iframe>
                     </div>
                 </div>

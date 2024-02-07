@@ -34,10 +34,12 @@ export const Login = () => {
     };
 
     const handlePasswordChange = (event) => {
+
         setPassword(event.target.value);
     };
 
-    const handleLogIn = async () => {
+    const handleLogIn = async (e) => {
+        e.preventDefault();
         try {
             const response = await axios.post(`${url}/auth/login`, {
                 email,
@@ -53,11 +55,15 @@ export const Login = () => {
                 isClosable: true,
             });
             // Update AuthContext with login data
-            login({
-                username: response.data._id, 
-                email: response.data.email,
-                token: response.data.token  
-            });
+
+            if (response) {
+                const { _id, email, token } = response.data.payload;
+                login({
+                    _id,
+                    email,
+                    token
+                });
+            }
             // Handle the response, e.g., show a success message or redirect the user
             console.log(response.data);
         } catch (error) {
