@@ -6,16 +6,21 @@ import 'swiper/css/pagination';
 import 'swiper/css/mousewheel';
 import 'swiper/css/keyboard';
 import { Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CarouselInfo } from '../Constants/CarouselInfo';
 
 export const Home = () => {
     const [selectedTab, setSelectedTab] = useState(1);
+    const [selectedTabWrap, setSelectedTabWrap] = useState(1);
 
     const handleTabClick = (tabNumber) => {
         setSelectedTab(tabNumber);
     };
 
+
+    const handleWrapClick = (tabNumber) => {
+        setSelectedTabWrap(tabNumber);
+    };
 
     //css
 
@@ -27,18 +32,19 @@ export const Home = () => {
         fontWeight: 200,
     };
 
+
     const tabStyles = {
         // Styles for non-active tabs
         categoryTab: {
-           
+
         },
         // Styles for active tab
         activeCategoryTab: {
             border: '1px solid #ccc',
-            borderRadius: '1rem', 
+            borderRadius: '1rem',
             boxShadow: '0px 0px 10px 0px #ccc',
             color: "#4d0ce4",
-            
+
         },
     };
 
@@ -46,11 +52,22 @@ export const Home = () => {
         <div >
 
             {/* box-1 */}
+            <div className='bg-[#4e18dd]  text-white h-[500px] '>
+                <div className='mx-14 px-14 pt-16'>
+                    <h2 className='text-4xl font-black '>Create Jaw-Dropping
+                        <br />Videos and Presentations</h2>
+                    <p className='text-lg  text-left'>Harness the power of toons to bring your message to life, making your viewers say “Got it!” with a little extra POW!</p>
+                    <h6 className='text-xl text'>Get started for free today!</h6>
+                    <button className='rounded-full bg-white text-blue-700'>START NOW</button>
+                </div>
+                <div className='mx-14'>
 
+                </div>
+            </div>
 
             {/* box-2 */}
-            <div className="our-user flex justify-center items-center user-block">
-                <div className="counter-box our-user-no">
+            <div className="our-user flex mx-14 justify-center items-center user-block">
+                <div className="flex justify-center items-center">
                     <span id="counter">
                         <span className="counter-digit" style={{ height: '40px', width: '30px', display: 'inline-block', backgroundImage: 'url(\'https://powtoon-prod-static.s3.amazonaws.com/cms-assets/home-new/digit.png\')', backgroundRepeat: 'no-repeat', backgroundPosition: '0px 0px' }}>
                             <span style={{ visibility: 'hidden' }}>1</span>
@@ -75,14 +92,14 @@ export const Home = () => {
             </div>
 
             {/* box-3 */}
-            <div>
+            <div className='grid justify-center items-center mx-14 mb-8'>
 
-                <h2 className="mt-20">
+                <h2 className="mt-20 text-4xl text-center font-bold text-[#331877] mb-4">
                     Break through the noise with
                     <br />
                     visual communications
                 </h2>
-                <p className="sub" style={sub}>
+                <p className="sub text-[#490BE6] text-xl font-light" style={sub}>
                     Communicating visually with short videos and animation allows your<br />
                     entire team to achieve more, no matter what kind of work you do.
                 </p>
@@ -91,7 +108,100 @@ export const Home = () => {
 
 
             {/* box-4 */}
+            <div className='mx-14'>
+                <div className="categories flex justify-center items-center tab-wrapper">
+                    <ul className="categories-tabs grid   justify-start  items-center w-6/12 ">
+                        <li className="py-5 hover:text-[#42a5f5] cursor-pointer" data-tab="1" onClick={() => handleWrapClick(1)}>
+                            <h4 className='text-2xl font-bold  pb-1'>HR</h4>
+                            <p>Recruit, Onboard, &amp; Retain Top Talent</p>
+                        </li>
+                        <hr />
+                        <li data-tab="2" className="py-5 hover:text-[#42a5f5] cursor-pointer" onClick={() => handleWrapClick(2)}>
+                            <h4 className='text-2xl font-bold  pb-1'>Training and L&amp;D</h4>
+                            <p>Develop transformational leadership</p>
+                        </li>
+                        <hr />
+                        <li data-tab="3" className=" py-5 hover:text-[#42a5f5] cursor-pointer" onClick={() => handleWrapClick(3)}>
+                            <h4 className='text-2xl font-bold  pb-1'>Internal Communications</h4>
+                            <p>Inspire genuine employee engagement</p>
+                        </li>
+                        <hr />
+                        <li data-tab="4" className="py-5 hover:text-[#42a5f5] cursor-pointer" onClick={() => handleWrapClick(4)}>
+                            <h4 className='text-2xl font-bold  pb-1'>Marketing</h4>
+                            <p>Marketing strategy and lead generation with results you can measure</p>
+                        </li>
+                        <hr />
+                        <li data-tab="5" className="py-5 hover:text-[#42a5f5] cursor-pointer" onClick={() => handleWrapClick(5)}>
+                            <h4 className='text-2xl font-bold  pb-1'>Education</h4>
+                            <p className='text-wrap'>For teachers &amp; students to inspire creativity and storytelling that will impress the whole class</p>
+                        </li>
+                    </ul>
 
+                    <ul className="tabs-content  grid justify-center items-center my-10   pl-10">
+                        <li data-tab-content="1" className={selectedTabWrap === 1 ? 'active grid justify-center items-center w-[750px] px-8 space-y-8' : 'hidden'}>
+
+                            <picture>
+                                <source srcSet="https://static.powtoon.co/images/hp/HR.webp" type="image/webp" />
+                                <img alt="hr video template" className="main-img active" data-img="one" loading="lazy" src="https://static.powtoon.co/marketing/Landing_Pages/HR.png" />
+                            </picture>
+                            <p className='pl-5'>From talent acquisition to change management, visual communication helps your business stand out while you attract top talent, onboard new employees effectively, and retain them for the long haul.</p>
+                            <div>
+
+                                <a className=" bg-[#4643f0] text-white font-semibold  py-4 px-20 rounded-full cursor-pointer" data-action="click" data-category="CTA" data-label="create_hr_videos" data-value="50311" href="/solution/human-resources">CREATE AN HR VIDEO</a>
+                            </div>
+                        </li>
+                        <li data-tab-content="2" className={selectedTabWrap === 2 ? 'active grid justify-center items-center w-[750px] px-8 space-y-8' : 'hidden'}>
+
+                            <picture>
+                                <source srcSet="https://static.powtoon.co/images/hp/Training.webp" type="image/webp" />
+                                <img alt="training video maker" className="main-img" data-img="two" loading="lazy" src="https://static.powtoon.co/marketing/Landing_Pages/Training.png" />
+                            </picture>
+                            <p className='pl-5'>Training videos are just the first step to transforming the way your company grows. Creating visual experiences makes for integrated, bottom-up learning that bridges the skill gap in your organization.</p>
+                            <div>
+
+                                <a className=" bg-[#4643f0] text-white font-semibold  py-4 px-20 rounded-full cursor-pointer" data-action="click" data-category="CTA" data-label="learn_more_LnD" data-value="50308" href="/solution/learning-development">LEARN MORE</a>
+                            </div>
+                        </li>
+                        <li data-tab-content="3" className={selectedTabWrap === 3 ? 'active grid justify-center w-[750px] items-center px-8 space-y-8' : 'hidden'}>
+
+                            <picture>
+                                <source srcSet="https://static.powtoon.co/images/hp/Internal_Comms.webp" type="image/webp" />
+                                <img alt="internal comms video creating platform" className="main-img" data-img="three" loading="lazy" src="https://static.powtoon.co/marketing/Landing_Pages/Internal_Comms.png" />
+                            </picture>
+                            <p className='pl-5'>Fight information silos, email overload, and inconsistent communications to bridge the communication gap in your organization. Delivering your internal comms via video, animation, and visual content supports an engaged and connected company culture.</p>
+                            <div>
+
+                                <a className=" bg-[#4643f0] text-white font-semibold  py-4 px-20 rounded-full cursor-pointer" data-action="click" data-category="CTA" data-label="create_internal_comms_videos" data-value="50310" href="/solution/internal-communications">CREATE AN INTERNAL COMMS VIDEO</a>
+                            </div>
+                        </li>
+                        <li data-tab-content="4" className={selectedTabWrap === 4 ? 'active grid justify-center items-center w-[750px]  px-8 space-y-8' : 'hidden'}>
+
+                            <picture>
+                                <source srcSet="https://static.powtoon.co/images/hp/Marketing.webp" type="image/webp" />
+                                <img alt="Visual marketing video platform" className="main-img" data-img="four" loading="lazy" src="https://static.powtoon.co/marketing/Landing_Pages/Marketing.png" />
+                            </picture>
+                            <p className='pl-5'>Visual marketing — from brand awareness and explainer videos to sharing your quarterly ROI and annual marketing plans in a visually engaging way — makes a deeper impact and accelerates your company’s growth.</p>
+                            <div>
+
+                                <a className=" bg-[#4643f0] text-white font-semibold  py-4 px-20 rounded-full cursor-pointer" data-action="click" data-category="CTA" data-label="create_marketing_videos" data-value="50312" href="/solution/marketing">CREATE A MARKETING VIDEO</a>
+                            </div>
+                        </li>
+                        <li data-tab-content="5" className={selectedTabWrap === 5 ? 'active grid justify-center items-center px-8 w-[750px] space-y-8' : 'hidden'}>
+
+                            <picture>
+                                <source srcSet="https://static.powtoon.co/images/hp/Education.webp" type="image/webp" />
+                                <img alt="classroom video" className="main-img" data-img="five" loading="lazy" src="https://static.powtoon.co/marketing/Landing_Pages/Education.png" />
+                            </picture>
+
+                            <p className='pl-5 '>Flip the classroom, impress your teachers. Introduce blended learning and transform classroom lessons into visual experiences that will stick for a lifetime.</p>
+                            <div className=''>
+                                <a className="bg-[#4643f0] text-white font-semibold  py-4 px-20 rounded-full cursor-pointer" data-action="click" data-category="CTA" data-label="learn_more_edu" data-value="50309" href="/solution/education">LEARN MORE</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
 
             {/* box-5 */}
             <div style={{ fontFamily: "Poppins" }} className="usedby bg-[#4e18dd] flex justify-center items-center text-white py-20 text-center">
@@ -129,7 +239,7 @@ export const Home = () => {
                             data-tab="1"
                             onClick={() => handleTabClick(1)}
                         >
-                            <img  alt="you can create" src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/yes-you-can.png" />
+                            <img alt="you can create" src="https://static.powtoon.co/cldn/site/lp/unbounce_hp/yes-you-can.png" />
                             <p className='text-black px-8'>Yes, you can create your own videos!</p>
                         </li>
                         <li
@@ -172,7 +282,7 @@ export const Home = () => {
                     <hr />
 
                     {/* second unorderList */}
-                    <ul className="tabs-content my-5 px-10">
+                    <ul className="tabs-content flex justify-center items-center my-5 px-10">
                         <li data-tab-content="1" className={selectedTab === 1 ? 'active flex justify-center items-center px-8' : 'hidden'}>
                             <span className="mob-close">X</span>
                             <p className='text-black w-2/4 text-2xl font-light text-left'>No matter your skill level or the task at hand, creating visual communications with Powtoon amplifies your results. Tell compelling stories through hundreds of animated characters, templates, video backgrounds, soundtracks, and more. With Powtoon, making your own videos requires no design or tech skills to start making a deeper impact at work.</p>
@@ -213,7 +323,7 @@ export const Home = () => {
 
                     <div>
 
-                        <a href="/account/" className="btn form-btn trackmt-4 bg-[#4643f0] text-white font-semibold  py-4 px-20 rounded-full hover:bg-blue-500 hover:text-white" data-action="click" data-category="CTA" data-label="start_now" data-value="20026">
+                        <a href="/account/" className="btn form-btn trackmt-4 bg-[#4643f0] text-white   font-semibold  py-4 px-20 rounded-full hover:bg-blue-500 hover:text-white" data-action="click" data-category="CTA" data-label="start_now" data-value="20026">
                             START NOW
                         </a>
                     </div>

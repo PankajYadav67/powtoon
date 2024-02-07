@@ -10,7 +10,7 @@ export const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
-        <div id="navbarRoot" className="bg-blue-700 h-20 flex justify-between items-center">
+        <div id="navbarRoot" className="bg-[#4e18dd] h-20 flex justify-between items-center">
             <header id="header" className="flex justify-between w-full items-center mx-12">
 
                 {/* Left side of the Navbar */}
