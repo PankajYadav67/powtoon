@@ -129,6 +129,7 @@ export const Education = () => {
                         className="guide-img"
                         src="https://res.cloudinary.com/powtoon-dev/image/upload/f_auto,q_auto/v1561987103/site/Solution-pages/third-image-cont.png"
                     />
+                    
                     <div className="text-container bg-white rounded-md">
                         <h4 className="text-2xl">Already have a PowerPoint<br />presentation you love?</h4>
                         <a className="text-[#2f4ffd] text-xl underline " href="/powtoon-for-powerpoint/">
@@ -140,7 +141,7 @@ export const Education = () => {
 
 
             {/* box-5 */}
-            <div className='mx-14'>
+            <div className=' h-28 bg-green-600'>
                 <Swiper
                     spaceBetween={30}
                     pagination={{
@@ -148,13 +149,14 @@ export const Education = () => {
                     }}
                     modules={[Pagination]}
                     className="mySwiper"
+                    style={{height: "500px", color: 'black' }}
                 >
                     {
                         EducationConstantsData.map((data) => {
                             <SwiperSlide key={data.tabIndex} style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "20px" }} className="mx-12">
                                 <div className='flex justify-center items-center'>
                                     <div>
-                                        <h2 >
+                                        <h2 className='text-3xl font-medium' >
                                             {data.leftSide.h2}
                                         </h2>
                                         <h5 >

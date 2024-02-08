@@ -8,13 +8,14 @@ import {
 
 export const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    
 
     return (
-        <div id="navbarRoot" className="bg-[#4e18dd]  h-20 flex justify-between items-center">
+        <div id="navbarRoot" className="bg-[#4e18dd] text-white  h-20 flex justify-between items-center">
             <header id="header" className="flex justify-between w-full items-center mx-12">
 
                 {/* Left side of the Navbar */}
-                <div className="w-[#780px] flex justify-center items-center font-semibold text-white">
+                <div className="w-[#780px] flex justify-center items-center font-semibold ">
                     <a href="/">
                         <img
                             src="https://library.powtoon.co/library/asset/15382/VCP_logo-02_pORGJlB.svg"
@@ -62,8 +63,8 @@ export const Navbar = () => {
                         </Menu>
 
                         {/* EDU and Enterprise Links */}
-                        <div><a href="/edu-home/">EDU</a></div>
-                        <div><a href="">Enterprise</a></div>
+                        <div><a href="/edu-home">EDU</a></div>
+                        <div><a href="/enterprise">Enterprise</a></div>
                     </nav>
                 </div>
 
