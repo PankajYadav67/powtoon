@@ -5,6 +5,7 @@ import { Login } from "../Components/Auth/Login/Login";
 import { SignUp } from "../Components/Auth/SignUp/SignUp";
 import { Education } from "../Pages/Education";
 import { Pricing } from "../Pages/Pricing";
+import { Enterprise } from "../Pages/Enterprise";
 
 
 
@@ -26,6 +27,7 @@ export const AppRoutes = () => {
                 <Route path="/edu-home/" element={<Education />}/>
                 <Route path="/auth/signup" element={<SignUp />}/>
                 <Route path="/premium" element={<Pricing />}/>
+                <Route path="/enterprise" element={<Enterprise />}/>
             </Routes>
           
             

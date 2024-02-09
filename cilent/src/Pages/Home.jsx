@@ -27,7 +27,7 @@ export const Home = () => {
 
     const sub = {
         fontSize: '19px',
-        color: 'rgb(73, 11, 230)',
+        color: '#490B9E',
         textAlign: 'center',
         lineHeight: '1.45',
         fontWeight: 200,

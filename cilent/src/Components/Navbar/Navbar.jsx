@@ -5,10 +5,11 @@ import {
     MenuButton,
     MenuList,
 } from "@chakra-ui/react";
+import { useAuth } from "../../Contexts/Auth.Context";
 
 export const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    
+    const { isLoggedIn, logout } = useAuth();
 
     return (
         <div id="navbarRoot" className="bg-[#4e18dd] text-white  h-20 flex justify-between items-center">
@@ -71,16 +72,23 @@ export const Navbar = () => {
                 {/* Right side of the Navbar */}
                 <div className="flex justify-end items-center font-semibold text-white space-x-5">
                     {/* Pricing Link */}
-                    <a href="/premium">
-                        <span>Pricing</span>
+                    <a href="/premium" className="transition duration-300 ease-in-out">
+                        <span className="hover:border-b-2 border-gray-300">Pricing</span>
                     </a>
 
                     {/* Log In */}
-                    <a href="/auth/login" className="transition duration-300 ease-in-out">
-                        <span className="hover:border-b-2 border-gray-300">
-                            Log In
-                        </span>
-                    </a>
+                    {isLoggedIn ? (
+                        <button onClick={logout} className="hover:border-b-2 border-gray-300">
+                            Log Out
+                        </button>
+                    ) : (
+                        <a href="/auth/login" className="transition duration-300 ease-in-out">
+                            <span className="hover:border-b-2 border-gray-300">
+                                Log In
+                            </span>
+                        </a>
+                    )}
+
 
                     {/* Sign Up  */}
                     <div>

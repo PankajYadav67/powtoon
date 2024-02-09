@@ -21,6 +21,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { URL } from '../../../Constants/EndPoints';
 import { useAuth } from '../../../Contexts/Auth.Context';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
     const [email, setEmail] = useState('');
@@ -28,6 +29,7 @@ export const Login = () => {
     const url = URL;
     const toast = useToast();
     const { login } = useAuth();
+    const navigate = useNavigate();
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -63,6 +65,8 @@ export const Login = () => {
                     email,
                     token
                 });
+                // Navigate to the home page
+                navigate('/');
             }
             // Handle the response, e.g., show a success message or redirect the user
             console.log(response.data);
