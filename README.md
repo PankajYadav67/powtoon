@@ -58,15 +58,15 @@ Run npm run dev command on terminal
 
 
 
-
-
-
-
-
 **Pricing:**
 ![App Screenshot](/public/ss/pricing.png)
+
+
+
 
 **Login:**
 ![App Screenshot](/public/ss/login.png)
 
 
+## Reference    
+    zeptonow.com
