@@ -1,8 +1,72 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This website is a Powtoon clone where I used React, JS, and Tailwind CSS to create a clone of Powtoon, which is a British animation service platform.
 
-Currently, two official plugins are available:
+## Authors
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Pankajkumar Yadav
+
+## Demo
+
+https://powtoon67.netlify.app/
+
+
+
+## Tech Stack
+
+**Client:** React, Js, Tailwind CSS , Font Awesome(icons) , Chakra UI
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/PankajYadav67/powtoon.git
+```
+
+Go to the project directory
+
+```bash
+  cd powtoon
+```
+Run npm run dev command on terminal
+
+
+## Screenshots
+
+**Navbar:**
+![App Screenshot](/public/ss/login.png)
+
+
+
+
+
+
+
+
+
+
+
+**Hero Section:**
+![App Screenshot](/public/ss/hero1.png)
+![App Screenshot](/public/ss/hero3.png)
+
+
+
+
+
+
+
+
+
+
+
+
+**Pricing:**
+![App Screenshot](/public/ss/pricing.png)
+
+**Login:**
+![App Screenshot](/public/ss/login.png)
+
+

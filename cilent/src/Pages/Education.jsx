@@ -3,6 +3,7 @@ import 'swiper/css/bundle';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import { EducationConstantsData } from '../Constants/EdcationConstants';
+import { Footer } from '../Components/Footer/Footer';
 
 
 export const Education = () => {
@@ -180,7 +181,7 @@ export const Education = () => {
 
             </div>
             {/* box-6 */}
-
+                    <Footer/>
             {/* box-7 */}
 
 

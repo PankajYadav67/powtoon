@@ -4,6 +4,7 @@ import {
     Menu,
     MenuButton,
     MenuList,
+    MenuDivider,
 } from "@chakra-ui/react";
 import { useAuth } from "../../Contexts/Auth.Context";
 
@@ -24,10 +25,12 @@ export const Navbar = () => {
                             width={"200px"}
                             height={"45px"}
                             style={{ fill: "white" }}
+                            className="filter grayscale  brightness-100  "
                         />
                     </a>
 
-                    <nav role="navigation" className="mx-2 flex justify-center items-center space-x-1">
+                    <nav role="navigation" className="mx-2 flex justify-center items-center space-x-4
+                    .">
                         {/* Create Menu */}
                         <Menu isOpen={isOpen}>
                             <MenuButton
@@ -40,22 +43,25 @@ export const Navbar = () => {
                                 aria-label="Courses"
                                 fontWeight="normal"
                                 onMouseEnter={onOpen}
-                                onMouseLeave={onClose}
                                 fontSize={"larger"}
                             >
                                 Create
                             </MenuButton>
-                            <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-                                <MenuItem color={"black"}>5658
-                                    {/* Content for Create Menu */}
-                                </MenuItem>
-                                {/* More MenuItems for Create Menu */}
+                            <MenuList  onMouseEnter={onOpen} onMouseLeave={onClose}>
+                                <MenuItem fontSize="sm" color={"black"}>Videos</MenuItem>
+                                <MenuItem fontSize="sm" color={"black"}>WhiteBoard Doodling</MenuItem>
+                                <MenuItem fontSize="sm" color={"black"}>Animated Videos</MenuItem>
+                                <MenuDivider />
+                                <MenuItem fontSize="sm" color={"black"}>Screen Recordings</MenuItem>
+                                <MenuItem fontSize="sm" color={"black"}>Presentations</MenuItem>
+                                <MenuItem fontSize="sm" color={"black"}>Customs Character</MenuItem>
+                         
                             </MenuList>
                         </Menu>
 
                         {/* Why Powtoon Menu */}
                         <Menu isOpen={isOpen}>
-                            {/* Similar structure as Create Menu */}
+                          
                         </Menu>
 
                         {/* Solution Menu */}
