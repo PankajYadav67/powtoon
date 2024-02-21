@@ -1,4 +1,4 @@
-# Portfolio Website
+# Powtoon (UI+LOGIN) 
 
 This website is a Powtoon clone where I used React, JS, and Tailwind CSS to create a clone of Powtoon, which is a British animation service platform.
 
@@ -8,7 +8,7 @@ This website is a Powtoon clone where I used React, JS, and Tailwind CSS to crea
 
 ## Demo
 
-https://powtoon67.netlify.app/
+https://heroic-zabaione-f0b69c.netlify.app/
 
 
 
@@ -70,4 +70,4 @@ Run npm run dev command on terminal
 
 
 ## Reference    
-    zeptonow.com
+    powtoon.com
