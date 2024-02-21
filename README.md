@@ -36,7 +36,7 @@ Run npm run dev command on terminal
 ## Screenshots
 
 **Navbar:**
-![App Screenshot](/public/ss/login.png)
+![App Screenshot](/public/ss/Screenshot (216).png)
 
 
 
@@ -49,8 +49,9 @@ Run npm run dev command on terminal
 
 
 **Hero Section:**
-![App Screenshot](/public/ss/hero1.png)
-![App Screenshot](/public/ss/hero3.png)
+![App Screenshot](/public/ss/Screenshot (213).png)
+![App Screenshot](/public/ss/Screenshot (211).png)
+![App Screenshot](/public/ss/Screenshot (212).png)
 
 
 
@@ -59,13 +60,13 @@ Run npm run dev command on terminal
 
 
 **Pricing:**
-![App Screenshot](/public/ss/pricing.png)
+![App Screenshot](/public/ss/Screenshot (215).png)
 
 
 
 
 **Login:**
-![App Screenshot](/public/ss/login.png)
+![App Screenshot](/public/ss/Screenshot (214).png)
 
 
 ## Reference    
