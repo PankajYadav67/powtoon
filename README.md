@@ -14,8 +14,10 @@ https://heroic-zabaione-f0b69c.netlify.app/
 
 ## Tech Stack
 
-**Client:** React, Js, Tailwind CSS , Font Awesome(icons) , Chakra UI
+**Client:** React, Js, Tailwind CSS, Font Awesome(icons), Chakra UI.
 
+
+**Server:** Node.js, Express.js, MongoDB.
 
 ## Run Locally
 
@@ -36,7 +38,7 @@ Run npm run dev command on terminal
 ## Screenshots
 
 **Navbar:**
-![App Screenshot](/public/ss/Screenshot (216).png)
+![App Screenshot](/public/ss/Screenshot%20(216).png)
 
 
 
@@ -49,9 +51,9 @@ Run npm run dev command on terminal
 
 
 **Hero Section:**
-![App Screenshot](/public/ss/Screenshot (213).png)
-![App Screenshot](/public/ss/Screenshot (211).png)
-![App Screenshot](/public/ss/Screenshot (212).png)
+![App Screenshot](/public/ss/Screenshot%20(213).png)
+![App Screenshot](/public/ss/Screenshot%20(211).png)
+![App Screenshot](/public/ss/Screenshot%20(212).png)
 
 
 
@@ -60,13 +62,13 @@ Run npm run dev command on terminal
 
 
 **Pricing:**
-![App Screenshot](/public/ss/Screenshot (215).png)
+![App Screenshot](/public/ss/Screenshot%20(215).png)
 
 
 
 
 **Login:**
-![App Screenshot](/public/ss/Screenshot (214).png)
+![App Screenshot](/public/ss/Screenshot%20(214).png)
 
 
 ## Reference    
