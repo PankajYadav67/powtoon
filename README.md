@@ -38,7 +38,7 @@ Run npm run dev command on terminal
 ## Screenshots
 
 **Navbar:**
-![App Screenshot](/public/ss/Screenshot%20(216).png)
+![App Screenshot](/cilent/public/ss/Screenshot%20(216).png)
 
 
 
@@ -51,9 +51,9 @@ Run npm run dev command on terminal
 
 
 **Hero Section:**
-![App Screenshot](/public/ss/Screenshot%20(213).png)
-![App Screenshot](/public/ss/Screenshot%20(211).png)
-![App Screenshot](/public/ss/Screenshot%20(212).png)
+![App Screenshot](/cilent/public/ss/Screenshot%20(213).png)
+![App Screenshot](/cilent/public/ss/Screenshot%20(211).png)
+![App Screenshot](/cilent/public/ss/Screenshot%20(212).png)
 
 
 
@@ -62,14 +62,18 @@ Run npm run dev command on terminal
 
 
 **Pricing:**
-![App Screenshot](/public/ss/Screenshot%20(215).png)
+![App Screenshot](/cilent/public/ss/Screenshot%20(215).png)
 
 
 
 
 **Login:**
-![App Screenshot](/public/ss/Screenshot%20(214).png)
+![App Screenshot](/cilent/public/ss/Screenshot%20(214).png)
 
 
 ## Reference    
-    powtoon.com
+
+
+```bash
+  powtoon.com
+```
