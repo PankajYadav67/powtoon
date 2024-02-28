@@ -8,7 +8,7 @@ This website is a Powtoon clone where I used React, JS, and Tailwind CSS to crea
 
 ## Demo
 
-https://heroic-zabaione-f0b69c.netlify.app/
+https://powtoonclone.netlify.app/
 
 
 
